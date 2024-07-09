@@ -325,3 +325,6 @@ This script generates an interactive sunburst chart. It reads input files includ
 ```
 python3 12_interactive_graph.py /condensed_matrices/condensed_matrix.csv /condensed_matrices/labels.csv /annotation.csv /clusters_comparisons.csv --annotation Epithelial
 ```
+## Authors
+
+- [Usama AKHTAR](https://github.com/usama-ak)
