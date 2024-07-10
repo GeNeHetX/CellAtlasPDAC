@@ -1,3 +1,7 @@
+## Authors
+
+- [Usama AKHTAR](https://github.com/usama-ak)
+
 # Introduction
 This document outlines the process of creating a cell atlas through a series of scripts. Each script performs a specific step in the workflow, and the inputs and outputs of each step are clearly defined.
 
@@ -325,6 +329,3 @@ This script generates an interactive sunburst chart. It reads input files includ
 ```
 python3 12_interactive_graph.py /condensed_matrices/condensed_matrix.csv /condensed_matrices/labels.csv /annotation.csv /clusters_comparisons.csv --annotation Epithelial
 ```
-## Authors
-
-- [Usama AKHTAR](https://github.com/usama-ak)
