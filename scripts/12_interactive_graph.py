@@ -206,7 +206,7 @@ if __name__ == "__main__":
     for dataset in data:
         cell_lists[dataset] = create_dataset_cell_list(dataset)
 
-    if args.args.node_annotation_path is not None:
+    if args.node_annotation_path is not None:
         nodes_description = initialize_data(annotation_path=args.node_annotation_path, condensed_matrix_path=args.condensed_matrix_path, labels_path=args.labels_path)
     else : 
         nodes_description = initialize_data(annotation_path=False, condensed_matrix_path=args.condensed_matrix_path, labels_path=args.labels_path)
