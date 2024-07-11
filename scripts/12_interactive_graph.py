@@ -4,7 +4,7 @@ import numpy as np
 from scipy.cluster.hierarchy import dendrogram, linkage, set_link_color_palette
 from ete3 import Tree
 from pathlib import Path
-import scipy as sp
+import scipy.sparse as sp
 import argparse
 
 ''' INITIALIZE DATA '''
