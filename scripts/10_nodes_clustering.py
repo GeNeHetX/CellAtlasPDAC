@@ -95,10 +95,10 @@ def save_results(output_dir, filtered_condensed_matrix, nodes):
     nodes (list): List of nodes.
     """
     os.makedirs(output_dir, exist_ok=True)
-    condensed_matrix_path = os.path.join(output_dir, 'condensed_matrix_zhang_RBH02_cut08.csv')
+    condensed_matrix_path = os.path.join(output_dir, 'condensed_mtx.csv')
     np.savetxt(condensed_matrix_path, filtered_condensed_matrix, delimiter=',')
 
-    labels_path = os.path.join(output_dir, 'labels_zhang_RBH02_cut08.csv')
+    labels_path = os.path.join(output_dir, 'labels.csv')
     with open(labels_path, 'w') as f:
         for label in nodes:
             f.write(f"{label}\n")
@@ -126,10 +126,25 @@ def main(input_path, output_dir, distance_column='Jaccard Score', linkage_method
     nodes = list(set(data2['Node1']).union(data2['Node2']))
     node_indices = {node: i for i, node in enumerate(nodes)}
 
+    print('Creating distance matrix')
     filtered_distance_matrix = create_distance_matrix(data2, nodes, node_indices)
     filtered_condensed_matrix = squareform(filtered_distance_matrix)
 
     save_results(output_dir, filtered_condensed_matrix, nodes)
+
+    Z = linkage(filtered_condensed_matrix, 'average')
+    set_link_color_palette([f"C{i}" for i in range(1, 100000)])
+    d = dendrogram(Z, labels=nodes, color_threshold=0.8, above_threshold_color='black', no_plot=True)
+
+    nodes = []
+    clusters = []
+    for i, node in enumerate(d['ivl']):
+        nodes.append(node)
+        clusters.append(d['leaves_color_list'][i])
+
+    res = pd.DataFrame({'Node': nodes, 'Cluster': clusters})
+
+    res.to_csv(os.path.join(output_dir, 'clustering_output.csv'), index=False, sep='\t')
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Perform hierarchical clustering on node data and save filtered results.')
