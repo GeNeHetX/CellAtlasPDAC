@@ -5,6 +5,7 @@ library(data.table)
 library(dplyr)
 library(tidytree)
 library(scMayoMap)
+library(presto)
 
 # Define paths
 cell_path <- '/home/celia/Documents/VisualStudioCode/ZHANG/zhang/Zhang.Cells.Annotation.V1.tsv'
