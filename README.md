@@ -7,7 +7,6 @@ output:
     toc: true
     toc_depth: 2
     toc_float: true
-
 ---
 
 # Introduction
