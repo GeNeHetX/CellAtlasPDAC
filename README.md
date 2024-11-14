@@ -1,3 +1,6 @@
+## Authors
+- [Usama Akhtar](https://github.com/usama-ak)
+- 
 # Introduction
 
 This document outlines the process of creating a comprehensive cell atlas using a series of scripts. Each script performs a specific step in the workflow, with clearly defined inputs and outputs. The scripts are designed to process single-cell RNA-seq data and build a hierarchical cell state atlas.
