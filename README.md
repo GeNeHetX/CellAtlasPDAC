@@ -1,14 +1,3 @@
----
-title: "PDAC Cell Atlas"
-author: "Usama Akhtar"
-date: "2024-11-15"
-output: 
-  html_document:
-    toc: true
-    toc_depth: 2
-    toc_float: true
----
-
 # Introduction
 
 This document outlines the process of creating a comprehensive cell atlas using a series of scripts. Each script performs a specific step in the workflow, with clearly defined inputs and outputs. The scripts are designed to process single-cell RNA-seq data and build a hierarchical cell state atlas.
