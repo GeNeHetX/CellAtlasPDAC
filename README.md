@@ -509,8 +509,8 @@ This script performs hierarchical clustering on node data based on a distance me
 
 ```
 python 10_nodes_clustering.py \
-        /path/to/input/full_data.csv \
-        /path/to/output_dir \
+        /media/celia/data/data_filtered.csv \
+        /media/celia/data/atlas/ \
         --distance_column 'Jaccard Score' \
         --linkage_method 'average' \
         --threshold 0.8 \
