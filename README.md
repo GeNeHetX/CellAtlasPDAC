@@ -221,18 +221,19 @@ The script requires specific input files. Paths to these files should be specifi
 - **Sample File**: Path to a file containing samples of the dataset, e.g., `/home/celia/Documents/VisualStudioCode/samples/peng_samples.txt`
 
 ## Outputs
-- **Example Output Directory Structure**  
-        ```
-        /home/celia/Documents/annotation/findmarkers/peng/  
-        ├── Sample1/  
-        │   ├── NodeA.csv  
-        │   ├── NodeB.csv  
-        │   └── NodeC.csv  
-        └── Sample2/  
-        |   ├── NodeA.csv  
-        |   ├── NodeB.csv
-        |   └── NodeC.csv  
-        ```
+- **Example Output Directory Structure**
+
+    ```
+    /home/celia/Documents/annotation/findmarkers/peng/  
+    ├── Sample1/  
+    │   ├── NodeA.csv  
+    │   ├── NodeB.csv  
+    │   └── NodeC.csv  
+    └── Sample2/  
+    |   ├── NodeA.csv  
+    |   ├── NodeB.csv  
+    |   └── NodeC.csv  
+    ```
 - **Markers CSV Files**: Marker genes for each node in each subset, saved in the output directory.
 
 ### Example of Output CSV file**:  
