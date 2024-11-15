@@ -82,7 +82,7 @@ python3 02_sample_matrix.py
 
 ## Summary
 
-This script runs a Python script (`run_cellstates.py`) for each sample listed in `ITEMS`. It specifies input file paths (`INPUT_FILE`) and output directories (`OUTPUT_DIR`) for each sample.  
+This script runs the Python script (`run_cellstates.py`) for each sample listed in `ITEMS`. It specifies input file paths (`INPUT_FILE`) and output directories (`OUTPUT_DIR`) for each sample. This script is part of the **CellStates** package, which you can obtain by cloning its GitHub repository.  
 
 Cellstates is a python package for analysis of UMI-based single-cell RNA-seq data. It describes the higher-order relationship of these cell-states in a hierarchical tree and provide scores for marker-genes within this tree. For more information, visit the CellStates GitHub repository : https://github.com/nimwegenLab/cellstates.git.
 
@@ -119,7 +119,17 @@ Cellstates is a python package for analysis of UMI-based single-cell RNA-seq dat
 ## Inputs
 
 The script requires specific input files. Paths to these files should be specified directly within the script:  
-- **Base Directory**: Base path that contains where all outputs will be generated, e.g.,`/cellstatesappli/`
+- **Base Directory**: Base path that contains where all outputs will be generated for a dataset, e.g.,`/PENG/cellstatesappli/`
+    - **Example Directory Structure**  
+        ```
+        /home/celia/Documents/VisualCodeStudio/  
+        ├── PENG/  
+        │   ├── cellstatesappli/  
+        │   │   ├── RNAmatrix_T2/  
+        │   │   ├── RNAmatrix_T3/
+        │   │   ├── RNAmatrix_T6/ 
+        │   │   ├── RNAmatrix_T7/  
+        ```
 - **Script Path**: Path to the script that runs cellstates `/run_cellstates.py`
 - **List of Samples**: `ITEMS`, containing sample identifiers.
 
@@ -150,7 +160,27 @@ conda activate cellstates-env
 ## Inputs
 
 The script requires specific input files. Paths to these files should be specified directly within the script:  
-- **Base Path**: Base path containing all cellstates outputs
+- **Base Path**: Base path containing all cellstates outputs, e.g. `/home/celia/Documents/VisualStudioCode/`
+    - **Example Directory Structure**
+        ```
+        /home/celia/Documents/VisualStudioCode/  
+        ├── PENG/  
+        │   ├── cellstatesappli/  
+        │   │   ├── RNAmatrix_T2/
+        │   │   │   ├── CellID.txt
+        │   │   │   ├── cluster_hierarchy.tsv
+        │   │   │   ├── direchlet_pseudocounts.txt
+        │   │   │   └── optimized_clusters.txt  
+        │   │   ├── RNAmatrix_T3/
+        │   │   ├── RNAmatrix_T6/ 
+        │   │   ├── RNAmatrix_T7/  
+        ├── STEELE/  
+        │   ├── cellstatesappli/  
+        │   │   ├── RNAmatrix_T2/  
+        │   │   ├── RNAmatrix_T3/
+        │   │   ├── RNAmatrix_T6/ 
+        │   │   ├── RNAmatrix_T7/  
+        ```
 - **Dataset Name**: Name of the folder containing cellstates outputs of a specific dataset
 - **Sample Directory**: Path to a directory containing sample lists, e.g., `/home/celia/Documents/VisualStudioCode/samples/`
     - For each dataset, there should be a corresponding text file with sample names, e.g., `peng_samples.txt`
@@ -183,15 +213,26 @@ This R script processes RNA matrices, cell annotations, and cluster data for mul
 ## Inputs
 
 The script requires specific input files. Paths to these files should be specified directly within the script:  
-- **Cell Annotation Path**: Path to file containing the cell annotation data or cell barcodes of a dataset, e.g., `/Zhang.Cells.Annotation.V1.tsv`
-- **Expression Matrix Path**: Path to file containing the expression matrix of a dataset in 'mtx' format, e.g.,`/Zhang.rawcount.V1.mtx`
-- **Features Path**: Path to file containing gene annotation data or gene list of a dataset, e.g., `/Zhang.geneAnnotation.V1.tsv`
-- **Subset Matrix Base Path**: Path to folder containing matrices of all subsets of a dataset
-- **Output Path**: Path to output folder
-- **Sample File**: Path to a file containing samples of the dataset, e.g., `/home/celia/Documents/VisualStudioCode/samples/werba_samples.txt`
+- **Cell Annotation Path**: Path to file containing the cell annotation data or cell barcodes of a dataset, e.g., `/Cells.csv`
+- **Expression Matrix Path**: Path to file containing the expression matrix of a dataset in 'mtx' format, e.g.,`Exp_data_UMIcounts.mtx`
+- **Features Path**: Path to file containing gene annotation data or gene list of a dataset, e.g., `/Genes.csv`
+- **Subset Matrix Base Path**: Path to folder containing matrices of all subsets of a dataset e.g., `/home/celia/Documents/VisualStudioCode/PENG/cellstatesappli`
+- **Output Path**: Path to output folder e.g. `/home/celia/Documents/annotation/findmarkers/peng/`
+- **Sample File**: Path to a file containing samples of the dataset, e.g., `/home/celia/Documents/VisualStudioCode/samples/peng_samples.txt`
 
 ## Outputs
-
+- **Example Output Directory Structure**  
+        ```
+        /home/celia/Documents/annotation/findmarkers/peng/  
+        ├── Sample1/  
+        │   ├── NodeA.csv  
+        │   ├── NodeB.csv  
+        │   └── NodeC.csv  
+        └── Sample2/  
+        |   ├── NodeA.csv  
+        |   ├── NodeB.csv
+        |   └── NodeC.csv  
+        ```
 - **Markers CSV Files**: Marker genes for each node in each subset, saved in the output directory.
 
 ### Example of Output CSV file**:  
@@ -237,7 +278,27 @@ This script generates a node-cell matrix using node IDs from Newick tree files a
 ## Inputs
 
 The script requires specific input files. Paths to these files should be specified directly within the script:  
-- **Base Path**: Base path containing all cellstates outputs, e.g., `/home/celia/Documents/VisualStudioCode/`
+- **Base Path**: Base path containing all cellstates outputs (same as *Script 4*), e.g., `/home/celia/Documents/VisualStudioCode/`
+    - **Example Directory Structure**
+        ```
+        /home/celia/Documents/VisualStudioCode/  
+        ├── PENG/  
+        │   ├── cellstatesappli/  
+        │   │   ├── RNAmatrix_T2/
+        │   │   │   ├── CellID.txt
+        │   │   │   ├── cluster_hierarchy.tsv
+        │   │   │   ├── direchlet_pseudocounts.txt
+        │   │   │   └── optimized_clusters.txt  
+        │   │   ├── RNAmatrix_T3/
+        │   │   ├── RNAmatrix_T6/ 
+        │   │   ├── RNAmatrix_T7/  
+        ├── STEELE/  
+        │   ├── cellstatesappli/  
+        │   │   ├── RNAmatrix_T2/  
+        │   │   ├── RNAmatrix_T3/
+        │   │   ├── RNAmatrix_T6/ 
+        │   │   ├── RNAmatrix_T7/  
+        ```
 - **Sample Directory**: Path to a directory containing sample lists, e.g., `/home/celia/Documents/VisualStudioCode/samples/`
     - For each dataset, there should be a corresponding text file with sample names, e.g., `peng_samples.txt`
 - **Dataset Name**: Name of the dataset for which to generate the matrix e.g., `peng`
@@ -304,12 +365,12 @@ The script requires specific input files. Paths to these files should be specifi
         │   │   ├── NodeB.csv  
         │   │   └── NodeC.csv  
         │   └── Sample2/  
-        │       ├── NodeA.csv  
-        │       ├── NodeB.csv  
-        │       └── NodeC.csv  
+        │   |   ├── NodeA.csv  
+        │   |   ├── NodeB.csv  
+        │   |   └── NodeC.csv  
         └── steele/  
-            ├── Sample1/  
-            ├── Sample2/  
+        |   ├── Sample1/  
+        |   ├── Sample2/  
         ```
 
 ## Script
@@ -330,6 +391,15 @@ This script calculates the Jaccard similarity between gene expression markers of
 - **Node Cell Matrix Directory**: Directory containing the sparse cell matrix files for each dataset., e.g., `/media/celia/data/cell_mtx/`
 - **Node Gene Matrix Directory**: Directory containing the sparse gene matrix files for each dataset, e.g., `/media/celia/data/gene_mtx/`
 - **Sample Directory**: Path to a directory containing sample lists, e.g., `/home/celia/Documents/VisualStudioCode/samples/`
+    - **Example Directory Structure**  
+        ```
+        /home/celia/Documents/VisualStudioCode/samples/  
+        ├── hwang_samples.txt
+        ├── lin_samples.txt
+        ├── peng_samples.txt
+        ...
+        └── zhang_samples.txt  
+        ```
 - **Number of Processes**: Number of processes for multiprocessing
 
 ## Outputs
@@ -344,12 +414,12 @@ This script calculates the Jaccard similarity between gene expression markers of
 ## Script
 
 ```
-python3 07_similarity_rbh.py \
-  --output_path <output_folder_path> \
-  --cell_mtx_dir <cell_matrix_directory> \
-  --gene_mtx_dir <gene_matrix_directory> \
-  --samples_dir <samples_directory> \
-  --num_processes <num_processes>
+python3 07_similarity_rbh.py \  
+  --output_path /media/celia/data/nodes/ \  
+  --cell_mtx_dir /media/celia/data/cell_mtx/ \  
+  --gene_mtx_dir /media/celia/data/gene_mtx/ \  
+  --samples_dir /home/celia/Documents/VisualStudioCode/samples/ \  
+  --num_processes 15
 ```
 
 # Step 8: Combine Pairwise Similarity Data
@@ -360,8 +430,8 @@ This script combines multiple CSV files containing pairwise similarity data into
 
 ## Inputs
 
-- **Input Directory**: Path to the folder containing all samples' pairwise comparisons, e.g., `/data/nodes/`
-- **Output File Path**: Path to save the combined output file in CSV format, e.g., `/combined_data.csv`
+- **Input Directory**: Path to the folder containing all samples' pairwise comparisons, e.g., `/media/celia/data/nodes/`
+- **Output File Path**: Path to save the combined output file in CSV format, e.g., `/media/celia/data/data.csv`
 
 ## Outputs
 
@@ -374,9 +444,9 @@ This script combines multiple CSV files containing pairwise similarity data into
 ## Script
 
 ```
-python3 08_combined_pairwise_similarity.py \
-    --input_dir /data/nodes/ \
-    --output_path /data/combined_data.csv
+python3 08_combined_pairwise_similarity.py \  
+    --input_dir /media/celia/data/nodes/ \  
+    --output_path /media/celia/data/data.csv
 ```
 
 # Step 9: Filter Node Data
@@ -387,8 +457,8 @@ This script filters nodes based on Reciprocal Best Hits (RBH) and a specified Ja
 
 ## Inputs
 
-- **Input File Path**: Path to the input CSV file containing node data, e.g., `/data.csv`
-- **Output File Path**: Path to save the filtered output CSV file, e.g., `data_filtered.csv`
+- **Input File Path**: Path to the input CSV file containing node data, e.g., `/media/celia/data/data.csv`
+- **Output File Path**: Path to save the filtered output CSV file, e.g., `/media/celia/data/data_filtered.csv`
 - **RBH Filter**: Boolean value to filter by RBH (Reciprocal Best Hits), e.g., `True`
 - **Jaccard Score Threshold**: Minimum Jaccard score to keep, e.g., `0.20`
 
@@ -403,7 +473,11 @@ This script filters nodes based on Reciprocal Best Hits (RBH) and a specified Ja
 ## Script
 
 ```
-python3 09_filter_similarities.py /path/to/input/full_data.csv /path/to/output/full_data_filtered.csv --rbh True --threshold 0.20
+python3 09_filter_similarities.py \  
+        /media/celia/data/data.csv \  
+        /media/celia/data/data_filtered.csv \  
+        --rbh True \  
+        --threshold 0.20
 ```
 
 # Step 10: Perform Hierarchical Clustering on Node Data
@@ -414,8 +488,8 @@ This script performs hierarchical clustering on node data based on a distance me
 
 ## Inputs
 
-- **Input File Path**: Path to the input CSV file containing similarity data, e.g., `/path/to/input/full_data_filtered.csv`
-- **Output Directory**: Directory to save the output files, e.g., `/path/to/output_dir`
+- **Input File Path**: Path to the input CSV file containing similarity data, e.g., `/media/celia/data/data_filtered.csv`
+- **Output Directory**: Directory to save the clustering output file, e.g., `/media/celia/data/atlas/`
 - **Distance Column**: Column name containing the distance metric in the input file, default is `Jaccard Score`
 - **Linkage Method**: Linkage method for hierarchical clustering, default is `average`
 - **Threshold**: Threshold for clusters in the dendrogram, default is `0.8`
@@ -433,7 +507,13 @@ This script performs hierarchical clustering on node data based on a distance me
 ## Script
 
 ```
-python 10_nodes_clustering.py /path/to/input/full_data.csv /path/to/output_dir --distance_column 'Jaccard Score' --linkage_method 'average' --threshold 0.8 --min_cluster_size 3
+python 10_nodes_clustering.py \
+        /path/to/input/full_data.csv \
+        /path/to/output_dir \
+        --distance_column 'Jaccard Score' \
+        --linkage_method 'average' \
+        --threshold 0.8 \
+        --min_cluster_size 3
 ```
 # Step 11: Establishing hierarchy between the clusters
 
