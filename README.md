@@ -133,7 +133,7 @@ The script requires specific input files. Paths to these files should be specifi
 bash 03_cellstates_samples.sh
 ```
 
-# Step 4: Generate Newick Tree Strings for Clusters
+# Step 4: Generate Newick Tree Strings Per Sample
 
 ## Summary
 
@@ -170,7 +170,7 @@ The script requires specific input files. Paths to these files should be specifi
 ## Script
 
 ```
-python 04_generate_newick.py
+python 04_newick_tree.py
 ```
 
 
@@ -449,7 +449,10 @@ This Jupyter notebook focuses on refining and organizing the clusters obtained f
 
 2) Cluster Comparison:
 
-- A comprehensive comparison is performed between all clusters to evaluate their hierarchical relationships. This involves counting how frequently nodes from one cluster appear above or below nodes from another cluster. This comparison helps identify potential parent-child relationships between clusters.
+- A comprehensive comparison is performed between all clusters to evaluate their hierarchical relationships. Nodes from each cluster are compared against nodes from all other clusters. For each pairwise comparison, we count how frequently nodes from one cluster appear above or below nodes from another cluster. This analysis helps in identifying **potential parent-child relationships** between clusters.
+- An initial version of this process is available in the accompanying notebook for quick exploration.
+- The most up-to-date and optimized implementation is included in the standalone script:  
+    **`clusters_pairwise_comparison.py`**.
 
 3) Flow-Based Hierarchical Assignment:
 
