@@ -60,6 +60,7 @@ This script filters the RNA matrix based on sample IDs extracted from column nam
 
 ## Inputs
 
+The script requires specific input files. Paths to these files should be specified directly within the script:  
 - **RNA Matrix**: Path to a RNA matrix of a dataset, e.g., `/cellstatesappli/RNAmatrix.tsv`.
 - **Sample Separator**: Character that separates sample identifiers in the column names of the RNA matrix (e.g., `_`, `-`)
 - **Sample Position**: Position of the sample identifier in the column name (e.g., 0 for `sample1_cellbarcode1` if the separator is `_`).
@@ -117,6 +118,7 @@ Cellstates is a python package for analysis of UMI-based single-cell RNA-seq dat
 
 ## Inputs
 
+The script requires specific input files. Paths to these files should be specified directly within the script:  
 - **Base Directory**: Base path that contains where all outputs will be generated, e.g.,`/cellstatesappli/`
 - **Script Path**: Path to the script that runs cellstates `/run_cellstates.py`
 - **List of Samples**: `ITEMS`, containing sample identifiers.
@@ -147,6 +149,7 @@ conda activate cellstates-env
 
 ## Inputs
 
+The script requires specific input files. Paths to these files should be specified directly within the script:  
 - **Base Path**: Base path containing all cellstates outputs
 - **Dataset Name**: Name of the folder containing cellstates outputs of a specific dataset
 - **Sample Directory**: Path to a directory containing sample lists, e.g., `/home/celia/Documents/VisualStudioCode/samples/`
@@ -179,6 +182,7 @@ This R script processes RNA matrices, cell annotations, and cluster data for mul
 
 ## Inputs
 
+The script requires specific input files. Paths to these files should be specified directly within the script:  
 - **Cell Annotation Path**: Path to file containing the cell annotation data or cell barcodes of a dataset, e.g., `/Zhang.Cells.Annotation.V1.tsv`
 - **Expression Matrix Path**: Path to file containing the expression matrix of a dataset in 'mtx' format, e.g.,`/Zhang.rawcount.V1.mtx`
 - **Features Path**: Path to file containing gene annotation data or gene list of a dataset, e.g., `/Zhang.geneAnnotation.V1.tsv`
@@ -232,6 +236,7 @@ This script generates a node-cell matrix using node IDs from Newick tree files a
 
 ## Inputs
 
+The script requires specific input files. Paths to these files should be specified directly within the script:  
 - **Base Path**: Base path containing all cellstates outputs, e.g., `/home/celia/Documents/VisualStudioCode/`
 - **Sample Directory**: Path to a directory containing sample lists, e.g., `/home/celia/Documents/VisualStudioCode/samples/`
     - For each dataset, there should be a corresponding text file with sample names, e.g., `peng_samples.txt`
@@ -261,6 +266,7 @@ This script generates a Node-Gene Matrix by processing differential gene express
 
 ## Inputs
 
+The script requires specific input files. Paths to these files should be specified directly within the script:  
 - **DGEA Output Path**: Base path containing differential gene expression analysis output files for various datasets, e.g., `/home/celia/Documents/annotation/findmarkers/`
 - **Sample Directory**: Path to a directory containing sample lists, e.g., `/home/celia/Documents/VisualStudioCode/samples/`
     - For each dataset, there should be a corresponding text file with sample names, e.g., `peng_samples.txt`
