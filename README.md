@@ -38,10 +38,10 @@ This script loads a single-cell RNA-seq dataset using Seurat, performs basic qua
 
 ## Inputs
 
-- **Expression Matrix**: Exp_data_UMIcounts.mtx
-- **Cells metadata**: Cells.csv
-- **Genes**: Genes.txt
-- **Metadata**: Meta-data.csv
+The script requires specific input files. Paths to these files should be specified directly within the script:  
+- **Expression Matrix**: Contains UMI counts for each cell (rows represent genes, columns represent cells). The data should be in Matrix Market format (`.mtx`),  e.g., `Exp_data_UMIcounts.mtx`
+- **Cells metadata**: Includes cell-specific information such as cell IDs, sample origins, and initial annotations (if any),  e.g., `Cells.csv`
+- **Genes**: A list of gene names corresponding to the columns in the expression matrix, e.g., `Genes.txt`
 
 ## Outputs
 
