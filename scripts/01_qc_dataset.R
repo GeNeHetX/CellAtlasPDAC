@@ -20,9 +20,6 @@ expressionMatrix <- ReadMtx(
   cell.sep = ','
 )
 
-# Load metadata
-metadata <- read.csv('Meta-data.csv')
-
 # Create Seurat object
 obj <- CreateSeuratObject(
   counts = expressionMatrix, 
